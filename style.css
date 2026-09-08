@@ -1,0 +1,88 @@
+/* ===== 全局重置 ===== */
+* {
+    margin: 0;                      /* 清除默认外边距 */
+    padding: 0;                     /* 清除默认内边距 */
+    box-sizing: border-box;         /* 统一盒模型，宽高包含边框和内边距 */
+}
+
+/* ===== 页面整体布局 ===== */
+body {
+    /* 使用 Flexbox 实现卡片水平、垂直完全居中 */
+    display: flex;
+    justify-content: center;        /* 水平居中 */
+    align-items: center;            /* 垂直居中 */
+    min-height: 100vh;              /* 占满整个视口高度 */
+
+    /* 柔和的浅色渐变背景，衬托白色卡片 */
+    background: linear-gradient(135deg, #eef2f7 0%, #dfe8f1 100%);
+
+    /* 简约无衬线字体 */
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== 名片卡片 ===== */
+.card {
+    width: 340px;                   /* 卡片固定宽度 */
+    padding: 40px 30px;             /* 内部留白，保持简约通透 */
+    background-color: #ffffff;      /* 白色卡片背景 */
+    border-radius: 12px;            /* 12px 圆角（按需求指定） */
+    text-align: center;             /* 内容整体居中 */
+
+    /* 柔和阴影：低透明度 + 大扩散范围 */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    /* 过渡动画：位移与阴影平滑变化，时长 0.3 秒 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 鼠标悬停时：卡片轻微上浮 8px，阴影加深增强立体感 */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== 圆形头像 ===== */
+.avatar {
+    width: 110px;                   /* 头像宽度 */
+    height: 110px;                  /* 头像高度（与宽度相等才能呈现正圆） */
+    border-radius: 50%;             /* 圆形裁剪 */
+    object-fit: cover;              /* 图片等比填充，防止拉伸变形 */
+    border: 4px solid #eef2f7;      /* 淡色描边，与背景呼应 */
+    margin-bottom: 18px;            /* 与下方姓名的间距 */
+}
+
+/* ===== 姓名 ===== */
+.name {
+    font-size: 24px;                /* 姓名字号突出 */
+    font-weight: 700;               /* 加粗 */
+    color: #2c3e50;                 /* 深灰蓝色，稳重简约 */
+    margin-bottom: 6px;             /* 与职位的间距 */
+}
+
+/* ===== 职位 ===== */
+.title {
+    font-size: 15px;
+    color: #4a90d9;                 /* 主题蓝色，与头像占位图呼应 */
+    letter-spacing: 1px;            /* 字间距略微拉开，更显精致 */
+    margin-bottom: 22px;
+}
+
+/* ===== 分割线 ===== */
+.divider {
+    width: 48px;                    /* 短线条，简约点缀 */
+    height: 2px;
+    background-color: #e3e9f0;      /* 浅灰色 */
+    margin: 0 auto 22px;            /* 水平居中并与下方内容拉开距离 */
+    border-radius: 1px;
+}
+
+/* ===== 联系方式列表 ===== */
+.contact {
+    list-style: none;               /* 去掉列表默认圆点 */
+}
+
+.contact li {
+    font-size: 14px;
+    color: #7f8c9b;                 /* 浅灰色，弱化次要信息 */
+    line-height: 2.2;               /* 行间距舒适 */
+}
